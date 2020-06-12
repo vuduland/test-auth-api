@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Style.css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <!-- Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  </link>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+  <!-- Google Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+  <title>JOYNN Intake Form</title>
+</head>
+
+<body>
+  <!-- TITLE INTRO AREA-->
+  <div class="container">
+    <div class="jumbotron">
+      <br>
+      <h2><strong>JOYNN</strong> </h2>
+      <h2><strong>Community Support & Case Advocacy Intake Form</strong></h2>
+      <br>
+      <h5>
+        <em><mark>
+            All information provided to JOYNN staff remains confidential and will only be shared as
+            needed within our agency. Some information collected on this sheet will be tracked and
+            reported in “aggregate form” to our funders but no “identifying” information about you will be
+            shared outside of our agency unless you have given written/signed permission to do so.
+        </em></mark>
+      </h5>
+      <br>
+      <h3><mark>NOTE: ALL DOCUMENTATION IS FILED AND KEPT SECURED TO PROTECT YOUR
+          INFORMATION</mark></h3>
+      <br>
+      <div class="ClientCode">Client Code <input type="text"></div>
+      <br>
+    </div>
+  </div>
+
+
+  <br>
+  <!-- CLIENT CONTACT INFO -->
+  <div class="container" id="leftText">
+    <br>
+    <form>
+      <h2>CLIENT CONTACT INFO</h2>
+      <div class="container bg-secondary shadow p-3 mb-5 bg-white rounded">
+        <div class="cardBox">
+          <div class="card-body text-left" id="cardSection">
+
+            <div class="form-row-fluid">
+              <div class="form-group col-md-12">
+
+                <label for="inputFN">Name</label>
+                <input type="name" placeholder="" id="name">
+                <label for="date"> Date</label>
+                <input type="date" id="date" />
+              </div>
+            </div>
+
+            <div class="form-row-fluid">
+              <div class="form-group col-md-12">
+
+                Is the Client homeless?
+                <select name="homeless" id="homeless">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+                If yes, (Date became homeless)
+                <input type="date" id="datehomeless" />
+              </div>
+            </div>
+
+            <div class="form-row-fluid">
+              <div class="form-group col-md-12">
+
+                <label for="inputAddress2">Address
+                  <input type="text" placeholder="Street Address" id="address">
+                  <input type="text" placeholder="Apt#, FL#" id="addressapt">
+                </label>
+
+                <label for="inputCity">City</label>
+                <input type="text" placeholder="City name" id="addresscity">
+              </div>
+            </div>
+
+            <div class="form-row-fluid">
+              <div class="form-group col-md-12">
+                <label for="inputCity">State</label>
+                <select name="state" id="addressstate">
+                  <option value="null" selected="selected">Select a state</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+                <label for="inputZip">Zip</label>
+                <input type="text" placeholder="Zip" id="zipcode">
+                <label for="inputEmail">E-mail</label>
+                <input type="email" placeholder="E-mail" id="email">
+              </div>
+            </div>
+
+            <div class="form-row-fluid">
+              <div class="form-group col-md-12">
+
+                Phone:
+                <label for="tel">
+                  <input name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="phone">
+                </label>
+
+                SS#:
+                <input type="text" placeholder="XXX-XX-XXXX" id="ssn">
+                D.O.B :
+                <input type="date" id="dob" />
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <br>
+      <!--  RELATIONSHIP, GENDER AND ICE INFO  -->
+      <div class="container">
+        <h2>RELATIONSHIP, GENDER AND EMERGENCY CONTACT INFORMATION</h2>
+        <div class="card-box">
+          <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body text-left" id="cardSection">
+              <div class="form-row-fluid">
+                <div class="form-group col-md-12">
+
+                  Gender:
+                  <select name="gender" id="gender">
+                    <option value="null"></option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="nonbinary">Nonbinary</option>
+                    <option value="transgender">Transgender</option>
+                    <option value="noanswer">Prefer Not to Answer</option>
+                  </select>
+
+                  Sexuality:
+                  <select name="sexuality" id="sexuality">
+                    <option value="null"></option>
+                    <option value="Heterosexual">Heterosexual</option>
+                    <option value="Homosexual">Homosexual</option>
+                    <option value="Bisexual">Bisexual</option>
+                    <option value="Asexual">Asexual</option>
+                    <option value="noanswer">Prefer Not to Answer</option>
+                  </select>
+
+                  Status:
+                  <select name="status" id="status">
+                    <option value="null"></option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Domestic Partnership">Domestic Partnership</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row-fluid">
+                <div class="form-group col-md-12">
+                  Race/Ethnicity:
+                  <select name="race" id="race">
+                    <option value="null"></option>
+                    <option value="African-American">African-American</option>
+                    <option value="Caucasian">Caucasian</option>
+                    <option value="Asian">Asian</option>
+                    <option value="Hispanic/Latinx">Hispanic/Latinx</option>
+                    <option value="Native American">Native American</option>
+                    <option value="Multiracial">Multiracial</option>
+                    <option value="Pacific Islander">Pacific Islander</option>
+                    <option value="Other">Other</option>
+                    <option value="noanswer">Prefer Not to Answer</option>
+                  </select>
+                  Primary Language:
+                  <select name="language" id="language">
+                    <option value="null"></option>
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Bilingual">Spanish/English</option>
+                  </select>
+                </div>
+              </div>
+              <!--ICE CONTACT INFO-->
+              <div class="form-group col-md-12">
+                Emergency Contact Relationship:
+                <select name="contact" id="contact">
+                  <option value="null"></option>
+                  <option value="Parent">Parent</option>
+                  <option value="Sibling">Sibling</option>
+                  <option value="Spouse">Spouse</option>
+                  <option value="Friend">Friend</option>
+                  <option value="Other">Other</option>
+                </select>
+                Emergency Contact Name:
+                <input type="text" id="contactname">
+                Emergency Contact Phone:
+                <input type="tel" value="(____) _____ - _________" id="contactphone">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- MILITARY SECTION -->
+      <div class="container">
+        <h2>MILITARY / VETERAN INFORMATION </h2>
+        <div class="card-box">
+          <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body text-left" id="cardSection">
+              <div class="form-row-fluid" id="militaryInfo">
+                <div class="form-group col-md-12">
+                  Is the Client a veteran?
+                  <select name="veteran" id="veteran">
+                    <option value="null"></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+
+
+                  If Yes, is the Client currently recieving services at the VA ?
+                  <select name="va" id="va">
+                    <option value="null"></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+
+                <!-- <div class="form-group col-md-12">
+                If No, please explain to us why?
+                <div class="form-group col-md-12">
+                  <textarea name="" id="infoBox" cols="100" rows="1"></textarea>
+                </div> -->
+
+                <div class="form-group col-md-12">
+                  Does the Client have any military service related conditions?
+                  <select name="vetcondition" id="vetcondition">
+                    <option value="null"></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+                If yes, please explain:
+                <div class="form-group col-md-12">
+                  <textarea name="vetconditioninfo" id="vetconditioninfo" cols="100" rows="1"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <br>
+      <!-- HOUSING SECT -->
+      <div class="container">
+        <h2>HOUSING INFORMATION </h2>
+        <div class="card-box">
+          <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body text-left" id="cardSection">
+              <div class="form-row-fluid" id="housingInfo">
+
+                <div class="form-group col-md-12">
+                  Does the client hold a housing voucher?
+                  <select name="housingvoucher" id="housingvoucher">
+                    <option value="null"></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="Lifetime">Lifetime</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-12">
+                  If yes, from where?
+                  <input type="text" id="housingvoucherissuer" />
+                  Type of voucher?
+                  <input type="text" id="housingvouchertype" />
+                </div>
+                <div class="form-group col-md-12">
+                  Is the client currently employed?
+                  <select name="employment" id="employment">
+                    <option value="null"></option>
+                    <option value="fulltime">Full Time</option>
+                    <option value="parttime">Part Time</option>
+                    <option value="contract">Contract</option>
+                    <option value="temporary">Temporary</option>
+                    <option value="unemployed">Unemployed</option>
+                  </select>
+                </div>
+
+                <!-- If not, Please Explain:
+              <textarea name="incomeStatus" id="infoBox" cols="30" rows="1"></textarea> -->
+
+                Monthly Income:
+                <select name="incometype" id="incometype">
+                  <option value="null"></option>
+                  <option value="Wages">Job</option>
+                  <option value="SSI">SSI</option>
+                  <option value="SSDI">SSDI</option>
+                  <option value="Other">Other</option>
+                </select>
+
+                Enter selected monthly amount:
+                <input type="number" id="monthlyincome" />
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- INSURANCE SECTION -->
+      <div class="container">
+        <h2>INSURANCE INFORMATION</h2>
+        <div class="card-box">
+          <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body text-left" id="cardSection">
+              <div class="form-group col-md-12">
+                Does the client have insurance?
+                <select name="insurance" id="insurance">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                If yes, which type?
+                <select name="insurancetype" id="insurancetype">
+                  <option value="null"></option>
+                  <option value="Medicaid">Medicaid</option>
+                  <option value="Medicare">Medicare</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+
+                Is insurance currently active as of today?
+                <select name="insuranceactive" id="insuranceactive">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-12">
+                Medical insurance ID number:
+                <input type="text" id="medicalInsuranceIdNumber" />
+              </div>
+
+              <div class="form-group col-md-12">
+                Additional notes:
+                <div class="textArea">
+                  <textarea name="insurancenotes" id="insurancenotes" cols="100" rows="2"></textarea>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <!-- MEDICAL CONDITION SECTION-->
+      <div class="container">
+        <h2>CURRENT MEDICAL CONDITION</h2>
+        <div class="card-box">
+          <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body text-left" id="cardSection">
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  Does the client have any physical disabilities?
+                  <select name="disabilities" id="disabilities">
+                    <option value="null"></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="noanswer">Prefer Not to Answer</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group col-md-12">
+                If yes, please explain:
+              </div>
+              <div class="textArea">
+                <textarea name="disabilitiesinfo" id="disabilitiesinfo" cols="100" rows="2"></textarea>
+              </div>
+
+              <div class="form-group col-md-12">
+
+                Receiving treatment?
+                <select name="disabilitiestreatment" id="disabilitiestreatment">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                <!-- Start of checkbox for current med cond-->
+                <div class="form-group col-md-12">
+                  Please select select all that apply:
+                </div>
+                <br>
+
+                <div class="form-row">
+
+                  <div class="form-group col-md-4">
+                    Please select any current\chronic medical conditions that apply:
+                    <select name="medicalcondition1" id="medicalcondition1">
+                      <option value="null"></option>
+                      <option value="hypertension">Hypertension</option>
+                      <option value="cholesterol">Cholesterol</option>
+                      <option value="thyroid">Thyroid problems</option>
+                      <option value="acidReflux">Acid Reflux</option>
+                      <option value="allergies">Seasonal Allergies</option>
+                      <option value="diabetes">Diabetes</option>
+                      <option value="cancer">Cancer</option>
+                      <option value="seizures">Seizures</option>
+                      <option value="pregnancy">Pregnancy</option>
+                      <option value="backpain">Back Pain</option>
+                      <option value="respiratoryissues">Respiratory Issues</option>
+                      <option value="copd">COPD</option>
+                      <option value="asthma">Asthma</option>
+                      <option value="obesity">Obesity</option>
+                      <option value="kidneydisease">Kidney Disease</option>
+                      <option value="hearingloss">Hearing Loss</option>
+                      <option value="visionloss">Vision Loss</option>
+                      <option value="weight">Weight Loss/Gain</option>
+                      <option value="wounds">Skin Issues/Open Wounds</option>
+                      <option value="brainjury">Brain Injury</option>
+                      <option value="hepatitis">Hepatitis</option>
+                      <option value="hivaids">HIV/AIDS</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    Please select any current\chronic medical conditions that apply:
+                    <select name="medicalcondition2" id="medicalcondition2">
+                      <option value="null"></option>
+                      <option value="hypertension">Hypertension</option>
+                      <option value="cholesterol">Cholesterol</option>
+                      <option value="thyroid">Thyroid problems</option>
+                      <option value="acidReflux">Acid Reflux</option>
+                      <option value="allergies">Seasonal Allergies</option>
+                      <option value="diabetes">Diabetes</option>
+                      <option value="cancer">Cancer</option>
+                      <option value="seizures">Seizures</option>
+                      <option value="pregnancy">Pregnancy</option>
+                      <option value="backpain">Back Pain</option>
+                      <option value="respiratoryissues">Respiratory Issues</option>
+                      <option value="copd">COPD</option>
+                      <option value="asthma">Asthma</option>
+                      <option value="obesity">Obesity</option>
+                      <option value="kidneydisease">Kidney Disease</option>
+                      <option value="hearingloss">Hearing Loss</option>
+                      <option value="visionloss">Vision Loss</option>
+                      <option value="weight">Weight Loss/Gain</option>
+                      <option value="wounds">Skin Issues/Open Wounds</option>
+                      <option value="brainjury">Brain Injury</option>
+                      <option value="hepatitis">Hepatitis</option>
+                      <option value="hivaids">HIV/AIDS</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    Please select any current\chronic medical conditions that apply:
+                    <select name="medicalcondition3" id="medicalcondition3">
+                      <option value="null"></option>
+                      <option value="hypertension">Hypertension</option>
+                      <option value="cholesterol">Cholesterol</option>
+                      <option value="thyroid">Thyroid problems</option>
+                      <option value="acidReflux">Acid Reflux</option>
+                      <option value="allergies">Seasonal Allergies</option>
+                      <option value="diabetes">Diabetes</option>
+                      <option value="cancer">Cancer</option>
+                      <option value="seizures">Seizures</option>
+                      <option value="pregnancy">Pregnancy</option>
+                      <option value="backpain">Back Pain</option>
+                      <option value="respiratoryissues">Respiratory Issues</option>
+                      <option value="copd">COPD</option>
+                      <option value="asthma">Asthma</option>
+                      <option value="obesity">Obesity</option>
+                      <option value="kidneydisease">Kidney Disease</option>
+                      <option value="hearingloss">Hearing Loss</option>
+                      <option value="visionloss">Vision Loss</option>
+                      <option value="weight">Weight Loss/Gain</option>
+                      <option value="wounds">Skin Issues/Open Wounds</option>
+                      <option value="brainjury">Brain Injury</option>
+                      <option value="hepatitis">Hepatitis</option>
+                      <option value="hivaids">HIV/AIDS</option>
+                    </select>
+                  </div>
+
+                </div>
+                <div class="form-group col-md-12">
+                  Other:
+                  <div class="textArea">
+                    <textarea name="medicalother" id="medicalother" cols="100" rows="2"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END MED COND SECT-->
+
+      <br>
+      <!--MENTAL HEALTH SECT-->
+      <div class="container">
+        <h2>MENTAL HEALTH CONDITION</h2>
+        <div class="card-box">
+          <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+            <div class="card-body text-left" id="cardSection">
+
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  Does the client have any mental health conditions?
+                  <select name="mentalhealthconditions" id="mentalhealthconditions">
+                    <option value="null"></option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Start of checkbox for current med cond-->
+              <div class="form-group col-md-12">
+                Please select select all that apply:
+              </div>
+
+              <div class="form-row">
+
+                <div class="form-group col-md-4">
+                  Please select any mental health conditions that apply:
+                  <select name="mhcondition1" id="mhcondition1">
+                    <option value="null"></option>
+                    <option value="adhd">ADHD</option>
+                    <option value="anxiety">Anxiety</option>
+                    <option value="autism">Autism</option>
+                    <option value="bdp">Borderline Personality Disorder</option>
+                    <option value="dissociative">Dissociative</option>
+                    <option value="eatingdisorder">Eating Disorder</option>
+                    <option value="ocd">OCD</option>
+                    <option value="ptsd">PTSD</option>
+                    <option value="bipolar">Bipolar</option>
+                    <option value="schizophrenia">Schizophrenia</option>
+                    <option value="schizoaffective">Schizoaffective</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                  Please select any mental health conditions that apply:
+                  <select name="mhcondition2" id="mhcondition2">
+                    <option value="null"></option>
+                    <option value="adhd">ADHD</option>
+                    <option value="anxiety">Anxiety</option>
+                    <option value="autism">Autism</option>
+                    <option value="bdp">Borderline Personality Disorder</option>
+                    <option value="dissociative">Dissociative</option>
+                    <option value="eatingdisorder">Eating Disorder</option>
+                    <option value="ocd">OCD</option>
+                    <option value="ptsd">PTSD</option>
+                    <option value="bipolar">Bipolar</option>
+                    <option value="schizophrenia">Schizophrenia</option>
+                    <option value="schizoaffective">Schizoaffective</option>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-4">
+                  Please select any mental health conditions that apply:
+                  <select name="mhcondition3" id="mhcondition3">
+                    <option value="null"></option>
+                    <option value="adhd">ADHD</option>
+                    <option value="anxiety">Anxiety</option>
+                    <option value="autism">Autism</option>
+                    <option value="bdp">Borderline Personality Disorder</option>
+                    <option value="dissociative">Dissociative</option>
+                    <option value="eatingdisorder">Eating Disorder</option>
+                    <option value="ocd">OCD</option>
+                    <option value="ptsd">PTSD</option>
+                    <option value="bipolar">Bipolar</option>
+                    <option value="schizophrenia">Schizophrenia</option>
+                    <option value="schizoaffective">Schizoaffective</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class="form-group col-md-12">
+                Other:
+                <div class="textArea">
+                  <textarea name="psychother" id="psychother" cols="100" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <!-- SUBSTANCE ABUSE SECT  -->
+  <br>
+  <div class="container">
+    <h2> SUBSTANCE ABUSE </h2>
+    <div class="card-box">
+      <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body text-left" id="cardSection">
+          <div class="form-row-fluid">
+            <div class="subAbuse">
+
+              Does the client have any substance abuse conditions?
+              <select name="substanceabuse" id="substanceabuse">
+                <option value="null"></option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+
+              <div class="form-group col-md-12">
+                Please select select all that apply:
+              </div>
+            </div>
+            <div class="form-row">
+
+              <div class="form-group col-md-4">
+                Please select any substance abuse conditions that apply:
+                <select name="substancecondition1" id="substancecondition1">
+                  <option value="null"></option>
+                  <option value="alcohol">Alcohol</option>
+                  <option value="marijuana">Marijuana</option>
+                  <option value="cocaine">Cocaine</option>
+                  <option value="methadone">Methadone</option>
+                  <option value="benzodiazepines">Benzodiazepines</option>
+                  <option value="ecstasy">Ecstasy</option>
+                  <option value="amphetamines">Amphetamines</option>
+                  <option value="heroin">Heroin</option>
+                  <option value="bathsalts">Bath Salts</option>
+                  <option value="meth">Meth</option>
+                  <option value="crack">Crack</option>
+                  <option value="prescription">Prescription Drugs</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group col-md-4">
+              Please select any substance abuse conditions that apply:
+              <select name="substancecondition2" id="substancecondition2">
+                <option value="null"></option>
+                <option value="alcohol">Alcohol</option>
+                <option value="marijuana">Marijuana</option>
+                <option value="cocaine">Cocaine</option>
+                <option value="methadone">Methadone</option>
+                <option value="benzodiazepines">Benzodiazepines</option>
+                <option value="ecstasy">Ecstasy</option>
+                <option value="amphetamines">Amphetamines</option>
+                <option value="heroin">Heroin</option>
+                <option value="bathsalts">Bath Salts</option>
+                <option value="meth">Meth</option>
+                <option value="crack">Crack</option>
+                <option value="prescription">Prescription Drugs</option>
+              </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              Please select any substance abuse conditions that apply:
+              <select name="substancecondition3" id="substancecondition3">
+                <option value="null"></option>
+                <option value="alcohol">Alcohol</option>
+                <option value="marijuana">Marijuana</option>
+                <option value="cocaine">Cocaine</option>
+                <option value="methadone">Methadone</option>
+                <option value="benzodiazepines">Benzodiazepines</option>
+                <option value="ecstasy">Ecstasy</option>
+                <option value="amphetamines">Amphetamines</option>
+                <option value="heroin">Heroin</option>
+                <option value="bathsalts">Bath Salts</option>
+                <option value="meth">Meth</option>
+                <option value="crack">Crack</option>
+                <option value="prescription">Prescription Drugs</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="form-group col-md-12">
+            Other:
+            <div class="textArea">
+              <textarea name="substanceother" id="substanceother" cols="100" rows="2"></textarea>
+            </div>
+          </div>
+        </div>
+
+        Additional Comments:
+        <textarea name="substancecomments" id="substancecomments" cols="30" rows="5"></textarea>
+        Last used:
+        <textarea name="substancelastused" id="substancelastused" cols="30" rows="5"></textarea>
+
+        Receiving Treatment?
+        <select name="substancetreatment" id="substancetreatment">
+          <option value="null"></option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        Requesting Assistance?
+        <select name="substanceassistance" id="substanceassistance">
+          <option value="null"></option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        Does the client have any prescribed medication?
+        <select name="prescriptions" id="prescriptions">
+          <option value="null"></option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        If yes, taken as prescribed?
+        <select name="prescriptionuse" id="prescriptionuse">
+          <option value="null"></option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        Requesting prescription assistance?
+        <select name="prescriptionassistance" id="prescriptionassistance">
+          <option value="null"></option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+  <!-- FELONY SECT  -->
+  <br>
+  <div class="container">
+    <h2> FELONY HISTORY </h2>
+    <div class="card-box">
+      <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+        <div class="card-body text-left" id="cardSection">
+          <div class="form-row-fluid">
+            <div class="felonyHistory">
+
+              <div class="domesticViolence">
+                Has the client experienced domestic violence?
+                <select name="domesticviolence" id="domesticviolence">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="noanswer">Prefer Not to Answer</option>
+                </select>
+                <br>
+                If yes, please explain:
+                <textarea name="domesticviolencecomments" id="domesticviolencecomments" cols="100" rows="2"></textarea>
+
+                Requesting Assistance:
+                <select name="domesticviolenceassistance" id="domesticviolenceassistance">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                Requesting Police Intervention?
+                <select name="domesticviolencepolice" id="domesticviolencepolice">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                History of Evictions?
+                <select name="evictionhistory" id="evictionhistory">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                If Yes, how many?
+                <input id="evictionnumber">
+                <br>
+                How many years ago?
+                <input id="evictiondate">
+
+              </div>
+              <div class="felonyHistory">
+
+                History of Felony Convictions?
+                <select name="felonyhistory" id="felonyhistory">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                If yes, were any within the past 7 years?
+                <select name="felonyyearsago" id="felonyyearsago">
+                  <option value="null"></option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+
+                Please explain:
+                <textarea name="felonycomments" id="felonycomments" cols="100" rows="2"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMUNITY RESOURCE ASSISTANCE SECTION-->
+    <div class="container">
+      <h2>COMMUNITY RESOURCE ASSISTANCE</h2>
+      <div class="card-box">
+        <div class="card bg-secondary shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body text-left" id="cardSection">
+
+            What types of community
+            resources, if any, is the client currently receiving?
+            (Examples: food stamps, discounted bus fare)
+            <textarea name="communityresources" id="communityresources" cols="100" rows="2"></textarea>
+
+            <!-- Start of checkbox for current med cond-->
+            <div class="form-group col-md-12">
+              CHECK ALL THAT THE INDIVIDUAL IS REQUESTING HELP WITH:
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group col-md-4">
+                Please select any that the client is requesting help with:
+                <select name="needsassistance1" id="needsassistance1">
+                  <option value="null"></option>
+                  <option value="casehelp">Case Help</option>
+                  <option value="clothinghelp">Clothing</option>
+                  <option value="documentationhelp">Documentation</option>
+                  <option value="shelterhelp">Shelter</option>
+                  <option value="employmenthelp">Employment</option>
+                  <option value="foodhelp">Food</option>
+                  <option value="foodstampshelp">Food Stamps</option>
+                  <option value="housinghelp">Housing</option>
+                  <option value="medicalcarehelp">Medical Care</option>
+                  <option value="medicalinsurancehelp">Medical Insurance</option>
+                  <option value="mentalhealthhelp">Mental Health</option>
+                  <option value="relationshiphelp">Relationships</option>
+                  <option value="substanceabusehelp">Substance Abuse</option>
+                  <option value="supportgrouphelp">Support Groups</option>
+                  <option value="familyhelp">Family</option>
+                  <option value="transportationhelp">Transportation</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-4">
+                Please select any that the client is requesting help with:
+                <select name="needsassistance2" id="needsassistance2">
+                  <option value="null"></option>
+                  <option value="casehelp">Case Help</option>
+                  <option value="clothinghelp">Clothing</option>
+                  <option value="documentationhelp">Documentation</option>
+                  <option value="shelterhelp">Shelter</option>
+                  <option value="employmenthelp">Employment</option>
+                  <option value="foodhelp">Food</option>
+                  <option value="foodstampshelp">Food Stamps</option>
+                  <option value="housinghelp">Housing</option>
+                  <option value="medicalcarehelp">Medical Care</option>
+                  <option value="medicalinsurancehelp">Medical Insurance</option>
+                  <option value="mentalhealthhelp">Mental Health</option>
+                  <option value="relationshiphelp">Relationships</option>
+                  <option value="substanceabusehelp">Substance Abuse</option>
+                  <option value="supportgrouphelp">Support Groups</option>
+                  <option value="familyhelp">Family</option>
+                  <option value="transportationhelp">Transportation</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-4">
+                Please select any that the client is requesting help with:
+                <select name="needsassistance3" id="needsassistance3">
+                  <option value="null"></option>
+                  <option value="casehelp">Case Help</option>
+                  <option value="clothinghelp">Clothing</option>
+                  <option value="documentationhelp">Documentation</option>
+                  <option value="shelterhelp">Shelter</option>
+                  <option value="employmenthelp">Employment</option>
+                  <option value="foodhelp">Food</option>
+                  <option value="foodstampshelp">Food Stamps</option>
+                  <option value="housinghelp">Housing</option>
+                  <option value="medicalcarehelp">Medical Care</option>
+                  <option value="medicalinsurancehelp">Medical Insurance</option>
+                  <option value="mentalhealthhelp">Mental Health</option>
+                  <option value="relationshiphelp">Relationships</option>
+                  <option value="substanceabusehelp">Substance Abuse</option>
+                  <option value="supportgrouphelp">Support Groups</option>
+                  <option value="familyhelp">Family</option>
+                  <option value="transportationhelp">Transportation</option>
+                </select>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END MED COND SECT-->
+    <button type="submit" id="submitButton">Submit</button>
+    </form>
+
+    <!-- Logic.js has to be here at the bottom of the body, not in the head with the other scripts and links. -->
+    <script src="logic.js"></script>
+    <script type="text/javascript" src="intakeform.js"></script>
+</body>
+
+</html>

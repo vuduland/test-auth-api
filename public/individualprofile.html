@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Style.css -->
+    <link rel="stylesheet" href="/style.css">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+    <!-- Google Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+    <!-- Logic.js -->
+    <script type="text/javascript" src="/logic.js"></script>
+    <!-- <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var joynnus = firebase.database().ref("joynnus");
+            joynnus.limitToLast(1).on("child_added", function (snapshot) {
+
+                console.log(joynnus.name);
+                console.log(joynnus.dob);
+                console.log(joynnus.ssn);
+
+            }, function (errorObject) {
+                console.log("Errors handled: " + errorObject.code);
+            }, false)
+        });
+    </script> -->
+
+    <title>JOYNN</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper #1de9b6 teal accent-3" id="navbar">
+            <a href="images/joyn-logo-teal.png" class="brand-logo lighten-4"> <img id="navbar-logo"
+                    src="images/joyn-logo-teal.png" alt=""></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col s3 m3">
+            <!-- <div class="row"> -->
+            <div id="profile" 00pxclass="col s2 m2">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/images/profileimg1.png" alt="" class="image-responsive">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title" id="name"></span>
+                        <div id="demographics"></div>
+                        <p id="gender"> Male </p>
+                        <p id="race"> African-American </p>
+                        <p id="dob"> DOB: </p>
+                        <p id="ssn"> SSN: </p>
+                        <br>
+                        <p id="needsassistance"> Needs Assistance For:</p>
+                        <ul><em>
+                                <li> Homelessness</li>
+                                <li> Mental Health Dx</li>
+                                <li> Medical Dx</li>
+                            </em></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <!-- <div id="info" class="col s8 m8"> -->
+        <!-- <div class="row"> -->
+        <div id="row1" class="col s9 m9">
+            <!-- <div class="row"> -->
+            <div class="col s12 m12">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Medical Condition</span>
+                        <p id="medical1"></p>
+                        <p id="medical2"></p>
+                        <p id="medical3"></p>
+                    </div>
+                </div>
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- <div id="row1" class="col s8 m8">
+            <div class="row"> -->
+                <!-- <div class="col s12 m12"> -->
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Mental Health Condition</span>
+                        <p id="mentalhealth1"></p>
+                        <p id="mentalhealth2"></p>
+                        <p id="mentalhealth3"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col s12 m12">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Needing Assistance</span>
+                    <p id="needsassistance1"></p>
+                    <p id="needsassistance2"></p>
+                    <p id="needsassistance13"></p>
+                </div>
+            </div>
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Veteran Status</span>
+                    <p>Veteran</p>
+                    <p>Dishonorable Discharge</p>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+    <!-- </div>
+    </div>
+    </div> -->
+
+
+    <!-- <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="/images/profileimg1.png" class="client-photo card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="client-name card-title">Kenneth Sargent</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Male</li>
+                            <li class="list-group-item">African-American</li>
+                            <li class="list-group-item">DOB: 1/1/1970</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div> -->
+
+    <!-- BODY ROW 1 -->
+    <!-- IMAGE CARD -->
+    <!-- CARD 1 w/o PICTURE -->
+    <!-- CARD 2 w/o PICTURE -->
+
+    <!-- Logic.js has to be here at the bottom of the body, not in the head with the other scripts and links. -->
+    <script src="logic.js"></script>
+    <script type="text/javascript" src="js/individualprofile.js"></script>
+
+    <!-- get the classes straight between MySQL and this page!!! -->
+</body>
+
+</html>
