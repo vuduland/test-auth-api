@@ -338,7 +338,7 @@
   <h2>Welcome to Joynnus</h2>
   <div class="container" id="container">
     <div class="form-container sign-up-container">
-      <form action="api/signup" method="post">
+      <form action="user/register" method="post">
         <h1 class="create">Create Account</h1>
 
         <!--radio button-->
@@ -353,20 +353,21 @@
           </label>
         </div>
         <!--end of radio button-->
-        <input type="text" id="name-input" placeholder="Name" />
-        <input type="email" id="new-email-input" placeholder="Email" />
-        <input type="password" id="new-password-input" placeholder="Password" />
-        <button type="button" onclick="radioLogin()">Let's Begin!</button>
+        <input type="text" id="name-input" name="name" placeholder="Name" />
+        <input type="email" id="new-email-input" name="email" placeholder="Email" />
+        <input type="password" id="new-password-input" name="password" placeholder="Password" />
+        <button type="submit" id="register">Let's Begin!</button>
+        <!-- onclick="radioLogin() -->
       </form>
     </div>
     <div class="form-container sign-in-container">
-      <form action="#" method="post">
+      <form action="/users/login" method="post">
         <h1>Sign in</h1>
         <span>Welcome Back !</span>
         <input type="email" id="email-input" placeholder="Email" />
         <input type="password" id="password-input" placeholder="Password" />
         <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <button id="login">Sign In</button>
       </form>
     </div>
     <div class="overlay-container">
@@ -407,7 +408,7 @@
     /*  radio button function  */
     function radioLogin() {
       if (document.getElementById('individual').checked) {
-        location.href = '/api/signup';
+        location.href = '../../public/intakeform.html';
       } else if (document.getElementById('provider').checked) {
         location.href = '#';
       }
@@ -417,8 +418,8 @@
   </script>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
+  <!-- <script type="text/javascript" src="js/signup.js"></script>
+  <script type="text/javascript" src="js/login.js"></script> -->
 </body>
 
 </html>
