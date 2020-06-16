@@ -5,6 +5,7 @@ $(document).ready(function() {
   var emailInput = $("input#new-email-input");
   var passwordInput = $("input#new-password-input");
 
+// All of this code was getting in the way of the verification under the /user/register route and therefore is unneeded.
   // When the signup button is clicked, we validate the name, email, and password are not blank
   // signUpForm.on("submit", function(event) {
   //   event.preventDefault();
@@ -27,7 +28,7 @@ $(document).ready(function() {
   // Does a post to the signup route. If successful, we are redirected to the intake form page
   // Otherwise we log any errors
   function signUpUser(name, email, password) {
-    $.post("/users/register", {
+    $.post("/user/register", {
       name: name,
       email: email,
       password: password
