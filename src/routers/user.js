@@ -1,19 +1,23 @@
 const express = require('express');
 const User = require('../models/User');
 const auth = require('../middleware/auth');
+const path = require("path");
 
 const router = express.Router();
 
-router.post('/users', async (req, res) => {
+router.post('/user/register', async (req, res) => {
 	// Create a new user
+	console.log(req.body);
 	try {
 		const user = new User(req.body);
 		await user.save();
 		const token = await user.generateAuthToken();
-		res.status(201).send({ user, token });
+		// res.status(201).send({ user, token });
+		// res.sendFile(path.join(__dirname, "/intakeform.html"));
 	} catch (error) {
 		res.status(400).send(error);
 	}
+	res.sendFile(path.join(__dirname, "../../public/intakeform.html"));
 });
 
 router.post('/users/login', async (req, res) => {
@@ -33,11 +37,13 @@ router.post('/users/login', async (req, res) => {
 	}
 });
 
+// TODO: This should redirect to a user profile. Perhaps using res.redirect to the profile.
 router.get('/users/me', auth, async (req, res) => {
 	// View logged in user profile
 	res.send(req.user);
 });
 
+// TODO: Redirect to the login page?
 router.post('/users/me/logout', auth, async (req, res) => {
 	// Log user out of the application
 	try {
@@ -51,6 +57,7 @@ router.post('/users/me/logout', auth, async (req, res) => {
 	}
 });
 
+// TODO: Is this for admin/testing purposes or should this be the default logout function?
 router.post('/users/me/logoutall', auth, async (req, res) => {
 	// Log user out of all devices
 	try {

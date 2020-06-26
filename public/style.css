@@ -1,0 +1,30 @@
+/* #navbar {
+    height: 75px;
+    line-height: 30px;
+    margin-bottom: 30px;
+} */
+
+#navbar-logo {
+  max-height: 64px;
+}
+
+.image-responsive {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#profile {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+#info {
+  border-radius: 10px;
+}
+
+.card {
+  border-radius: 10px;
+  min-height: 200px;
+  padding: 10px;
+  margin: 5px;
+}
